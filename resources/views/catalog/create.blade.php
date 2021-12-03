@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="row" style="margin-top:40px">
+
     <div class="offset-md-3 col-md-6">
        <div class="card">
           <div class="card-header text-center">
@@ -10,7 +11,8 @@
           </div>
           <div class="card-body" style="padding:30px">
 
-
+            <form action="{{ url('/catalog/create')}}" method="POST">
+            @csrf
              <div class="form-group">
                 <label for="title">Título</label>
                 <input type="text" name="title" id="title" class="form-control">
@@ -41,7 +43,7 @@
                     Añadir película
                 </button>
              </div>
-
+            </form>
              {{-- TODO: Cerrar formulario --}}
 
           </div>
