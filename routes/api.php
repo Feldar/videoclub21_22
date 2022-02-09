@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\DirectorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,8 @@ Route::group( ['middleware' => 'auth:sanctum'],function () {
 Route::get('/peliculas/search/{search}', [MovieController::class, 'search']);
 
 });
+
+Route::apiResource('directores', DirectorController::class);
 
 Route::post('/tokens/create', function (Request $request) {
     $request->validate([
