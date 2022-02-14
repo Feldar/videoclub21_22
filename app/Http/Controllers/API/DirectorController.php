@@ -49,7 +49,7 @@ class DirectorController extends Controller
                     'apellidos' => $apellidos,
                 ]);
             }
-            $pelicula->director_id = $director->id;
+            $pelicula->elDirector()->associate($director);
             $pelicula->save();
         }
     }
